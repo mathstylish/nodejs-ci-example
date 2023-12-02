@@ -3,12 +3,12 @@ on:
   pull_request:
     branches:
       - development
-strategy:
-  matrix:
-    node: ["18.12.0", "19.3.0", "21.3.0"]
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["18.12.0", "19.3.0", "21.3.0"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
